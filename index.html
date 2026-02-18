@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <title>Infinity Jasele | Platform Architect</title>
-<meta name="title" content="Infinity Jasele | Platform Architect">
-<meta name="description" content="Applying the spatial precision of visual couture to the engineering of digital ecosystems.">
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yourdomain.com/">
-<meta property="og:title" content="Infinity Jasele | Platform Architect">
-<meta property="og:description" content="Designing where human behavior meets platform logic. Explore strategic case studies including QuickConfirm™ and Magic City Connect.">
-<meta property="og:image" content="https://yourdomain.com/preview-image.png">
-
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://yourdomain.com/">
-<meta property="twitter:title" content="Infinity Jasele | Platform Architect">
-<meta property="twitter:description" content="Sovereign Systems Architecture & Digital Transformation.">
-<meta property="twitter:image" content="https://yourdomain.com/preview-image.png">
+    <meta name="title" content="Infinity Jasele | Platform Architect">
+    <meta name="description" content="Applying the spatial precision of visual couture to the engineering of digital ecosystems.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://infinityjasele.com/">
+    <meta property="og:title" content="Infinity Jasele | Platform Architect">
+    <meta property="og:description" content="Designing where human behavior meets platform logic. Explore strategic case studies including QuickConfirm™ and Magic City Connect.">
+    <meta property="og:image" content="https://yourdomain.com/preview-image.png">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://infinityjasele.com/">
+    <meta property="twitter:title" content="Infinity Jasele | Platform Architect">
+    <meta property="twitter:description" content="Sovereign Systems Architecture & Digital Transformation.">
+    <meta property="twitter:image" content="https://infinityjasele.com/preview-image.png">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +24,8 @@
         :root {
             --bg: #000000;
             --text: #f5f5f7;
-            --secondary: #86868b;
+            /* Updated from #86868b to #a1a1a6 for better AA contrast ratio */
+            --secondary: #a1a1a6; 
             --accent: #2997ff;
             --card: #1d1d1f;
         }
@@ -40,7 +40,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Animations */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -55,7 +54,7 @@
         }
         .skill-item.active { opacity: 1; transform: translateY(0); }
 
-        /* Header / Hero Section */
+        /* ARIA Landmarks: Header */
         header {
             height: 55vh; 
             display: flex;
@@ -72,7 +71,7 @@
             letter-spacing: -0.03em; 
             line-height: 0.9;
             margin-bottom: 25px;
-            background: linear-gradient(180deg, #fff 0%, #86868b 100%);
+            background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -84,61 +83,62 @@
             margin-top: 10px;
             line-height: 1.3;
             font-weight: 400;
-            letter-spacing: -0.01em;
         }
 
         section { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
+        /* sr-only keeps hierarchy for screen readers without changing visual design */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
         .section-label { color: var(--accent); font-weight: 600; font-size: 14px; text-transform: uppercase; margin-bottom: 20px; display: block; }
 
-        /* Skills Matrix */
         .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
         .skill-col h3 { font-size: 16px; margin-bottom: 20px; border-bottom: 0.5px solid #333; padding-bottom: 10px; color: #fff; }
         .skill-col ul { list-style: none; }
-        .skill-col li { color: var(--secondary); margin-bottom: 10px; font-size: 14px; }
+        .skill-item { color: var(--secondary); margin-bottom: 10px; font-size: 14px; }
 
-        /* Case Studies */
         .case-link { text-decoration: none; color: inherit; display: block; margin-bottom: 30px; }
-        
         .case-study {
             background: var(--card);
             border-radius: 22px;
             padding: 50px;
             border: 0.5px solid #333;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .case-study:hover {
-            transform: scale(1.02);
-            background: #252528;
-            border-color: var(--accent);
-        }
-
+        .case-study:hover { transform: scale(1.02); border-color: var(--accent); }
         .case-study h3 { font-size: 32px; margin-bottom: 10px; font-weight: 600; }
         .case-study p { color: var(--secondary); margin-bottom: 25px; line-height: 1.6; font-size: 17px; }
         
         .metrics { display: flex; gap: 40px; }
         .metric-item b { display: block; font-size: 28px; color: var(--text); }
-        .metric-item span { font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+        .metric-item span { font-size: 11px; color: var(--accent); text-transform: uppercase; font-weight: 700; }
 
-        /* Footer / Contact */
         footer { padding: 100px 20px; text-align: center; background: #000; border-top: 0.5px solid #1d1d1f; }
-        .contact-email { font-size: clamp(24px, 4vw, 36px); color: var(--text); text-decoration: none; font-weight: 600; transition: color 0.3s; }
-        .contact-email:hover { color: var(--accent); }
-        
-        .edu-container { margin-top: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .contact-email { font-size: clamp(24px, 4vw, 36px); color: var(--text); text-decoration: none; font-weight: 600; }
+        /* Fix contrast for footer copyright */
+        .footer-credits { margin-top: 80px; font-size: 12px; color: var(--secondary); }
+
+        .edu-container { margin-top: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: left; max-width: 800px; margin: 60px auto 0; }
         .edu-item b { display: block; font-size: 16px; margin-bottom: 5px; }
         .edu-item p { font-size: 14px; color: var(--secondary); }
 
         @media (max-width: 768px) { 
             .skills-grid { grid-template-columns: 1fr; } 
             .edu-container { grid-template-columns: 1fr; }
-            .metrics { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="reveal">
+    <header role="banner" class="reveal">
         <span class="section-label" style="margin-bottom: 30px;">Platform Architect</span>
         <h1>INFINITY JASELE</h1>
         <p class="vision-statement">
@@ -146,89 +146,95 @@
         </p>
     </header>
 
-    <section id="skills">
-        <span class="section-label">Comprehensive Stack</span>
-        <div class="skills-grid">
-            <div class="skill-col">
-                <h3>Development</h3>
-                <ul>
-                    <li class="skill-item">• Swift & SwiftUI (iOS Native)</li>
-                    <li class="skill-item">• App Intents Framework</li>
-                    <li class="skill-item">• HTML5 / CSS3 / JavaScript</li>
-                    <li class="skill-item">• React / Angular / jQuery</li>
-                    <li class="skill-item">• VoiceFlow & Bubble.io</li>
-                    <li class="skill-item">• Progressive Web Apps (PWA)</li>
-                    <li class="skill-item">• API & Payment Gateway Integration</li>
-                </ul>
-            </div>
-            <div class="skill-col">
-                <h3>Design & UX</h3>
-                <ul>
-                    <li class="skill-item">• Figma (Advanced Prototyping)</li>
-                    <li class="skill-item">• Adobe Creative Suite</li>
-                    <li class="skill-item">• Spatial Visual Simulation</li>
-                    <li class="skill-item">• User Journey Mapping</li>
-                    <li class="skill-item">• Usability Testing & Research</li>
-                    <li class="skill-item">• Video & Podcast Production</li>
-                    <li class="skill-item">• High-Fidelity Brand Integration</li>
-                </ul>
-            </div>
-            <div class="skill-col">
-                <h3>Systems Strategy</h3>
-                <ul>
-                    <li class="skill-item">• Multi-Stakeholder Infrastructure</li>
-                    <li class="skill-item">• B-Corp Framework Development</li>
-                    <li class="skill-item">• ROI & Business Impact Analysis</li>
-                    <li class="skill-item">• Domain & Cloud Management</li>
-                    <li class="skill-item">• Security & CRM Systems</li>
-                    <li class="skill-item">• Strategic Digital Pivots</li>
-                    <li class="skill-item">• A/B Testing & Data Analytics</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="cases">
-        <span class="section-label">Case Studies</span>
+    <main role="main">
         
-        <a href="quickconfirm.html" class="case-link">
-            <div class="case-study reveal">
-                <label style="color:var(--accent); font-size: 12px; font-weight: 700;">PROPRIETARY R&D</label>
-                <h3>QuickConfirm™</h3>
-                <p>Architecting a zero-friction bridge for iOS group scheduling. Leveraging the App Intents framework to map conversational context to Siri-enabled actionable events.</p>
-                <div class="metrics">
-                    <div class="metric-item"><b>47.6x</b><span>Projected ROI</span></div>
-                    <div class="metric-item"><b>Native</b><span>Apple Intelligence</span></div>
+        <section id="skills">
+            <span class="section-label" aria-hidden="true">Comprehensive Stack</span>
+            <h2 class="sr-only">Technical Skills and Competencies</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-col">
+                    <h3>Development</h3>
+                    <ul>
+                        <li class="skill-item">• Swift & SwiftUI (iOS Native)</li>
+                        <li class="skill-item">• App Intents Framework</li>
+                        <li class="skill-item">• HTML5 / CSS3 / JavaScript</li>
+                        <li class="skill-item">• React / Angular / jQuery</li>
+                        <li class="skill-item">• VoiceFlow & Bubble.io</li>
+                        <li class="skill-item">• Progressive Web Apps (PWA)</li>
+                        <li class="skill-item">• API & Payment Gateway Integration</li>
+                    </ul>
+                </div>
+                <div class="skill-col">
+                    <h3>Design & UX</h3>
+                    <ul>
+                        <li class="skill-item">• Figma (Advanced Prototyping)</li>
+                        <li class="skill-item">• Adobe Creative Suite</li>
+                        <li class="skill-item">• Spatial Visual Simulation</li>
+                        <li class="skill-item">• User Journey Mapping</li>
+                        <li class="skill-item">• Usability Testing & Research</li>
+                        <li class="skill-item">• Video & Podcast Production</li>
+                        <li class="skill-item">• High-Fidelity Brand Integration</li>
+                    </ul>
+                </div>
+                <div class="skill-col">
+                    <h3>Systems Strategy</h3>
+                    <ul>
+                        <li class="skill-item">• Multi-Stakeholder Infrastructure</li>
+                        <li class="skill-item">• B-Corp Framework Development</li>
+                        <li class="skill-item">• ROI & Business Impact Analysis</li>
+                        <li class="skill-item">• Domain & Cloud Management</li>
+                        <li class="skill-item">• Security & CRM Systems</li>
+                        <li class="skill-item">• Strategic Digital Pivots</li>
+                        <li class="skill-item">• A/B Testing & Data Analytics</li>
+                    </ul>
                 </div>
             </div>
-        </a>
+        </section>
 
-        <a href="magic-city.html" class="case-link">
-            <div class="case-study reveal">
-                <label style="color:var(--accent); font-size: 12px; font-weight: 700;">STRATEGIC INFRASTRUCTURE</label>
-                <h3>Magic City Connect</h3>
-                <p>Ecosystem design for a community-owned discovery platform. Integrated B-Corp legal frameworks with a scalable technical architecture for social reinvestment.</p>
-                <div class="metrics">
-                    <div class="metric-item"><b>$3.35M</b><span>Revenue Model</span></div>
-                    <div class="metric-item"><b>20%</b><span>Community Impact</span></div>
-                </div>
-            </div>
-        </a>
+        <section id="cases">
+            <span class="section-label" aria-hidden="true">Case Studies</span>
+            <h2 class="sr-only">Selected Architectural Projects</h2>
+            
+            <a href="quickconfirm.html" class="case-link" aria-label="View QuickConfirm Case Study">
+                <article class="case-study reveal">
+                    <span style="color:var(--accent); font-size: 12px; font-weight: 700;">PROPRIETARY R&D</span>
+                    <h3>QuickConfirm™</h3>
+                    <p>Architecting a zero-friction bridge for iOS group scheduling. Leveraging the App Intents framework to map conversational context to Siri-enabled actionable events.</p>
+                    <div class="metrics">
+                        <div class="metric-item"><b>47.6x</b><span>Projected ROI</span></div>
+                        <div class="metric-item"><b>Native</b><span>Apple Intelligence</span></div>
+                    </div>
+                </article>
+            </a>
 
-        <a href="wnwi.html" class="case-link">
-            <div class="case-study reveal">
-                <label style="color:var(--accent); font-size: 12px; font-weight: 700;">INSTITUTIONAL PIVOT</label>
-                <h3>WNWI Digital Transformation</h3>
-                <p>Lead architect for a complete systems overhaul of a 200+ member organization. Orchestrated the transition from analog processes to a unified, AI-enhanced digital core.</p>
-                <div class="metrics">
-                    <div class="metric-item"><b>+47%</b><span>Engagement Rate</span></div>
-                    <div class="metric-item"><b>-40%</b><span>Transition Time</span></div>
-                </div>
-            </div>
-        </a>
-    </section>
+            <a href="magic-city.html" class="case-link" aria-label="View Magic City Connect Case Study">
+                <article class="case-study reveal">
+                    <span style="color:var(--accent); font-size: 12px; font-weight: 700;">STRATEGIC INFRASTRUCTURE</span>
+                    <h3>Magic City Connect</h3>
+                    <p>Ecosystem design for a community-owned discovery platform. Integrated B-Corp legal frameworks with a scalable technical architecture for social reinvestment.</p>
+                    <div class="metrics">
+                        <div class="metric-item"><b>$3.35M</b><span>Revenue Model</span></div>
+                        <div class="metric-item"><b>20%</b><span>Community Impact</span></div>
+                    </div>
+                </article>
+            </a>
 
-    <footer>
+            <a href="wnwi.html" class="case-link" aria-label="View WNWI Transformation Case Study">
+                <article class="case-study reveal">
+                    <span style="color:var(--accent); font-size: 12px; font-weight: 700;">INSTITUTIONAL PIVOT</span>
+                    <h3>WNWI Digital Transformation</h3>
+                    <p>Lead architect for a complete systems overhaul of a 200+ member organization. Orchestrated the transition from analog processes to a unified, AI-enhanced digital core.</p>
+                    <div class="metrics">
+                        <div class="metric-item"><b>+47%</b><span>Engagement Rate</span></div>
+                        <div class="metric-item"><b>-40%</b><span>Transition Time</span></div>
+                    </div>
+                </article>
+            </a>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
         <span class="section-label">Get in Touch</span>
         <a href="mailto:infinity@icgpty.com" class="contact-email">infinity@icgpty.com</a>
         
@@ -243,12 +249,11 @@
             </div>
         </div>
         
-        <p style="margin-top: 80px; font-size: 11px; color: #333;">© 2026 Infinity Jasele. Platform Architecture & Systems Design.</p>
+        <p class="footer-credits">© 2026 Infinity Jasele. Platform Architecture & Systems Design.</p>
     </footer>
 
     <script>
         const observerOptions = { threshold: 0.15 };
-        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -256,7 +261,7 @@
                     if (entry.target.id === 'skills') {
                         const items = entry.target.querySelectorAll('.skill-item');
                         items.forEach((item, index) => {
-                            setTimeout(() => { item.classList.add('active'); }, index * 80);
+                            setTimeout(() => { item.classList.add('active'); }, index * 60);
                         });
                     }
                 }
