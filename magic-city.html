@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic City Connect | Case Study</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --text: #f5f5f7;
+            --secondary: #86868b;
+            --accent: #2997ff;
+            --card: #1d1d1f;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav { padding: 40px; }
+        nav a { color: var(--accent); text-decoration: none; font-weight: 500; font-size: 14px; }
+
+        header {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: left;
+        }
+
+        .section-label { color: var(--accent); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        h1 { font-size: clamp(40px, 8vw, 64px); font-weight: 700; margin: 20px 0; letter-spacing: -0.02em; }
+        
+        .lead { font-size: 24px; color: var(--secondary); margin-bottom: 60px; max-width: 700px; }
+
+        section { max-width: 900px; margin: 0 auto; padding: 60px 20px; border-top: 0.5px solid #333; }
+
+        h2 { font-size: 32px; margin-bottom: 30px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .impact-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .impact-card b { font-size: 36px; display: block; color: var(--text); }
+        .impact-card span { color: var(--accent); font-size: 12px; text-transform: uppercase; font-weight: 700; }
+
+        p { font-size: 18px; color: var(--secondary); margin-bottom: 25px; }
+
+        .diagram-container {
+            background: #080808;
+            border: 0.5px solid #333;
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        footer { padding: 100px 20px; text-align: center; }
+        .contact-btn {
+            background: var(--text);
+            color: var(--bg);
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav><a href="index.html">← Architecture Portfolio</a></nav>
+
+    <header>
+        <span class="section-label">Ecosystem Design</span>
+        <h1>Magic City Connect</h1>
+        <p class="lead">Birmingham's first community-owned discovery platform, transforming local exploration into measurable neighborhood investment.</p>
+        
+        <div class="impact-grid">
+            <div class="impact-card">
+                <b>$3.35M</b>
+                <span>Year 5 Revenue Projection</span>
+            </div>
+            <div class="impact-card">
+                <b>20%</b>
+                <span>Legally Mandated Reinvestment</span>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2>The Architecture of Intent</h2>
+        <p>Current discovery platforms prioritize ad-revenue over local impact. Magic City Connect solves this by utilizing a <b>B-Corporation Framework</b> that binds the platform's financial success to the city's 99 neighborhoods.</p>
+        
+        <div class="diagram-container">
+            <span class="section-label">Circular Economy Logic</span>
+            
+        </div>
+    </section>
+
+    <section>
+        <h2>Strategic Implementation</h2>
+        <p>The platform architecture focuses on three pillars: Authentic Discovery, Community Ownership, and Scalable Impact. Implementation follows a phased rollout starting with Birmingham's core tech ecosystem and expanding through localized neighborhood advocates.</p>
+        
+        <div class="impact-grid">
+            <div class="impact-card">
+                <b>$224K</b>
+                <span>Annual Community Fund (Yr 5)</span>
+            </div>
+            <div class="impact-card">
+                <b>$1,000</b>
+                <span>Community Entry Investment</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="margin-bottom: 40px;">Let's build sustainable systems.</h2>
+        <a href="mailto:infinity@icgpty.com" class="contact-btn">Discuss this Framework</a>
+    </footer>
+
+</body>
+</html>

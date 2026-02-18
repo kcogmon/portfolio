@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickConfirm™ | Case Study</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --text: #f5f5f7;
+            --secondary: #86868b;
+            --accent: #2997ff;
+            --card: #1d1d1f;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav { padding: 40px; }
+        nav a { color: var(--accent); text-decoration: none; font-weight: 500; font-size: 14px; }
+
+        header {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-label { color: var(--accent); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        h1 { font-size: clamp(40px, 8vw, 64px); font-weight: 700; margin: 20px 0; letter-spacing: -0.02em; }
+        .lead { font-size: 24px; color: var(--secondary); margin-bottom: 60px; max-width: 750px; }
+
+        section { max-width: 900px; margin: 0 auto; padding: 60px 20px; border-top: 0.5px solid #333; }
+        h2 { font-size: 32px; margin-bottom: 30px; }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .data-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 0.5px solid #333;
+        }
+
+        .data-card b { font-size: 48px; display: block; color: #fff; line-height: 1; margin-bottom: 10px; }
+        .data-card span { color: var(--secondary); font-size: 14px; }
+
+        .tech-pill {
+            display: inline-block;
+            background: #1d1d1f;
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: var(--accent);
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 0.5px solid #333;
+        }
+
+        .logic-flow {
+            background: #080808;
+            border-radius: 24px;
+            padding: 50px;
+            margin: 40px 0;
+            border: 0.5px solid #333;
+        }
+
+        footer { padding: 100px 20px; text-align: center; }
+        .back-link { color: var(--secondary); text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: var(--text); }
+    </style>
+</head>
+<body>
+
+    <nav><a href="index.html">← Systems Architecture</a></nav>
+
+    <header>
+        <span class="section-label">iOS Experience Integration</span>
+        <h1>QuickConfirm™</h1>
+        <p class="lead">Eliminating the "Planning Gap" by architecting a native bridge between natural language conversation and formal system commitments.</p>
+        
+        <div class="tech-stack">
+            <span class="tech-pill">App Intents Framework</span>
+            <span class="tech-pill">Siri Integration</span>
+            <span class="tech-pill">URLQueryItems Serialization</span>
+            <span class="tech-pill">EventKit</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>The Planning Gap</h2>
+        <p>Research indicates that while <b>87% of social plans</b> begin in message threads, only <b>23%</b> consistently make it to digital calendars. This friction results in missed opportunities and cognitive load.</p>
+        
+        <div class="data-grid">
+            <div class="data-card">
+                <b>87%</b>
+                <span>Plans starting in Messages</span>
+            </div>
+            <div class="data-card">
+                <b>47.6x</b>
+                <span>Projected Feature ROI</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>System Logic Architecture</h2>
+        <p>QuickConfirm™ functions as a "Shadow Service" that monitors conversational intent. When a date/time/location cluster is identified, the system serializes this metadata using <b>URLQueryItems</b> and presents a native Confirm UI directly within the iMessage bubble.</p>
+
+        <div class="logic-flow">
+            <span class="section-label">Technical Interaction Flow</span>
+            <p style="margin-top:20px; font-size:16px;">
+                1. <b>Intent Recognition:</b> NLP detects scheduling parameters.<br>
+                2. <b>Metadata Encoding:</b> Data is serialized into a secure URL string.<br>
+                3. <b>Native Injection:</b> App Intent triggers a specific iOS Action Sheet.<br>
+                4. <b>System Commitment:</b> EventKit writes directly to the Calendar database.
+            </p>
+            
+        </div>
+    </section>
+
+    <section>
+        <h2>Business Impact</h2>
+        <p>By reducing the transition time from "Conversation to Commitment" by an estimated <b>40%</b>, QuickConfirm™ increases platform stickiness and ensures the Apple ecosystem remains the central hub for user coordination.</p>
+    </section>
+
+    <footer>
+        <p style="margin-bottom:20px;">Built by Infinity Jasele</p>
+        <a href="index.html" class="back-link">Return to Portfolio</a>
+    </footer>
+
+</body>
+</html>
